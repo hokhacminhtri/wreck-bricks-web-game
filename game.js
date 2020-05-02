@@ -150,7 +150,7 @@ function handleBallCollideBricks() {
                 ball.dy = - ball.dy;
                 b.isBroken = true;
                 userScore += 100;
-                if (userScore === maxScore && userLevel >= maxLevel) {
+                if (userScore === maxScore) { //&& userLevel >= maxLevel) {
                     isGameOver = true;
                     isGameWin = true;
                 }
@@ -209,21 +209,21 @@ function handleGameOver() {
 
 }
 
-//
-function resetAndUpdate() {
-    if (isGameOver === false) {
-        handleBallCollideBound();
-        handleBallCollidePaddle();
-        handleBallCollideBricks();
+// Chuyen level (viet sau)
+// function resetAndUpdate() {
+//     if (isGameOver === false) {
+//         handleBallCollideBound();
+//         handleBallCollidePaddle();
+//         handleBallCollideBricks();
 
-        updateBallPosition();
-        updatePaddlePosition();
+//         updateBallPosition();
+//         updatePaddlePosition();
 
-        checkGameOver();
-    } else {
-        handleGameOver();
-    }
-}
+//         checkGameOver();
+//     } else {
+//         handleGameOver();
+//     }
+// }
 
 // ======================HAM CHINH (MAIN)======================
 
@@ -250,5 +250,5 @@ function draw() {
     }
 }
 
-calculateLevel();
+// calculateLevel();
 draw();
